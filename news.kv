@@ -1,0 +1,38 @@
+#:kivy 1.0.9
+#:import utils kivy.utils
+
+<NewsList>:
+    GridLayout:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        rows: 2
+        width: root.width
+        height: root.height
+        GridLayout:
+            rows: 2
+            size_hint_y: 10
+            width: root.width
+            AsyncImage:
+                source: root.image_url
+            Button:
+                text: root.header
+                size_hint_y: 0.3
+                text_size: self.width, None
+                height: self.texture_size[1]
+                on_press: root.open_url_news()
+        GridLayout:
+            # size_hint_y: 10
+            cols:3
+            Button:
+                text: "Prev"
+                on_press: root.prev_news()
+            Button:
+                text: "Update"
+                on_press: root.update_news()
+            Button:
+                text: "Next"
+                on_press: root.next_news()

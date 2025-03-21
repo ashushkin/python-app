@@ -1,0 +1,5 @@
+requests
+kivy
+kivyMD
+json
+webbrowser
